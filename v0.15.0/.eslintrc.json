@@ -1,7 +1,7 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": ["eslint:recommended", "prettier"],
-  "plugins": ["prettier", "@typescript-eslint", "import"],
+  "plugins": ["prettier", "@typescript-eslint"],
   "env": {
     "node": true,
     "es6": true,
@@ -10,78 +10,8 @@
   "rules": {
     // no undef is off because its handled by typescript
     "no-undef": "off",
-    "import/no-unresolved": "error",
-    "prettier/prettier": "error",
-    "no-unused-vars": ["error", { "args": "none" }],
-    "no-var": "error",
-    "prefer-const": ["error", { "destructuring": "all" }],
-    "prefer-template": "error",
-    "require-await": "error",
-    "no-sequences": "off",
-    "no-shadow": "error",
-    "no-unneeded-ternary": "error",
-    "no-negated-condition": "error",
-    "no-lonely-if": "error",
-    "no-restricted-syntax": [
-      "error",
-      {
-        "selector": "TSEnumDeclaration",
-        "message": "Don't declare typescript enums"
-      },
-      {
-        "selector": "TSModuleDeclaration",
-        "message": "Don't declare typescript namespaces"
-      },
-      {
-        "selector": "TSParameterProperty",
-        "message": "Don't use typescript parameter properties"
-      }
-    ],
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": ["..*"]
-      }
-    ],
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "type"
-        ],
-        "pathGroups": [
-          {
-            "pattern": "env-smart",
-            "group": "builtin",
-            "position": "before"
-          }
-        ],
-        "newlines-between": "never",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
-  },
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
-    "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true,
-        "project": "./tsconfig.json"
-      }
+    "parserOptions": {
+      "sourceType": "module"
     }
   }
 }
